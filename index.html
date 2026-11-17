@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحدي فك العُقَد الكشفية - التسامح</title>
+    <style>
+        :root {
+            --bg-color: #f7f3ed;
+            --card-bg: #ffffff;
+            --primary-color: #7b5b3a;
+            --primary-hover: #63472c;
+            --text-main: #4a3b32;
+            --text-muted: #7c6f64;
+            --border-color: #e6dcce;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(123, 91, 58, 0.1);
+            padding: 25px;
+            box-sizing: border-box;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background: var(--border-color);
+            height: 8px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+
+        .progress {
+            width: 0%;
+            height: 100%;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .screen {
+            display: none;
+        }
+
+        .screen.active {
+            display: block;
+        }
+
+        .icon-box {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .box-content {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: right;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #8c6742, #6b4c2e);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--primary-hover);
+        }
+
+        .option-btn {
+            background: white;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            width: 100%;
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            text-align: right;
+            cursor: pointer;
+            margin-bottom: 12px;
+            transition: all 0.2s;
+            line-height: 1.5;
+        }
+
+        .option-btn:hover {
+            border-color: var(--primary-color);
+            background: #fcfbfa;
+        }
+
+        .option-btn.selected {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .final-board {
+            background: #fff;
+            border: 2px dashed var(--primary-color);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .final-title {
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .signature-box {
+            background: var(--bg-color);
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- شاشة الترحيب -->
+    <div id="screen-welcome" class="screen active">
+        <h1>تحدي فك العُقَد الكشفية</h1>
+        <div class="subtitle">طليعة التسامح • اليوم العالمي للتسامح</div>
+        <div class="progress-bar"><div class="progress" id="main-progress" style="width: 0%;"></div></div>
+        
+        <div class="icon-box">🤝</div>
+        <div class="box-content" style="text-align: center;">
+            <strong>أهلاً بكِ في تحدي التسامح</strong><br><br>
+            تماماً مثل هذه العُقَد الكشفية التي تغطي اللوحة، فإن الضغينة وسوء الفهم يصنعان عُقداً في قلوبنا تحجب عنا جمال المحبة والسلام.<br><br>
+            اضغطي على كل عقدة، وحلّي الموقف التربوي لتنحل العقدة وتظهر عبارة اللوحة كاملة!
+        </div>
+        <button class="btn" onclick="nextScreen(1)">ابْدئي فك العُقَد الآن</button>
+    </div>
+
+    <!-- السؤال الأول -->
+    <div id="screen-q1" class="screen">
+        <h1>تحدي فك العُقَد الكشفية</h1>
+        <div class="subtitle">سؤال العقدة 1 من 3</div>
+        <div class="progress-bar"><div class="progress" style="width: 33%;"></div></div>
+
+        <div class="box-content">
+            <strong>الموقف:</strong> في أسبوع الاختبارات النهائية، كانت سارة متوترة للغاية بسبب صعوبة مادة الفيزياء. طلبت منها زميلتها نورة استعارة دفتر الملاحظات لتصويره، فردّت سارة بعصبية وصوت مرتفع أمام الطالبات: "ليس لدي وقت لكِ الآن، اعتمدي على نفسكِ". شعرت نورة بالإحراج والحزن، ولكن نظراً لأنها تقدر ضغطها، فما هو التصرف المتسامح الذي ينبغي أن تفعله نورة؟
+        </div>
+
+        <button class="option-btn" onclick="selectOption(this, 1)">أ) أن تقاطع سارة تماماً ولا تتحدث معها مرة أخرى لتتعلم كيف تضبط أعصابها.</button>
+        <button class="option-btn" onclick="selectOption(this, 1)">ب) أن تنتظر حتى ينتهي الاختبار، ثم تذهب إليها بههدوء لتقدر ضغطها وتقبل اعتذارها عندما تبادر به، أو تبادر هي بفتح صفحة جديدة.</button>
+        <button class="btn" style="margin-top: 10px;" onclick="checkAnswer(1)">تأكيد الإجابة وحل العقدة</button>
+    </div>
+
+    <!-- السؤال الثاني -->
+    <div id="screen-q2" class="screen">
+        <h1>تحدي فك العُقَد الكشفية</h1>
+        <div class="subtitle">سؤال العقدة 2 من 3</div>
+        <div class="progress-bar"><div class="progress" style="width: 66%;"></div></div>
+
+        <div class="box-content">
+            <strong>الموقف:</strong> أثناء العمل الجماعي على مشروع المادة، حدث سوء فهم بين عضوات المجموعة، وانسحبت إحدى الزميلات غاضبة معتقدة أن جهودها لم تُقدر. كيف تتصرف بقية الطالبات بروح التسامح والأخوة؟
+        </div>
+
+        <button class="option-btn" onclick="selectOption(this, 2)">أ) تجاهل انسحابها وإكمال العمل بدونها لأن الوقت محدود.</button>
+        <button class="option-btn" onclick="selectOption(this, 2)">ب) التواصل معها بكلمات طيبة، واحتواء الموقف، وتوضيح سوء الفهم بروح مفعمة بالمحبة والأخوة.</button>
+        <button class="btn" style="margin-top: 10px;" onclick="checkAnswer(2)">تأكيد الإجابة وحل العقدة</button>
+    </div>
+
+    <!-- السؤال الثالث -->
+    <div id="screen-q3" class="screen">
+        <h1>تحدي فك العُقَد الكشفية</h1>
+        <div class="subtitle">سؤال العقدة 3 من 3</div>
+        <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+
+        <div class="box-content">
+            <strong>الموقف:</strong> انتشر خطأ بسيط أو إشاعة غير مقصودة بين طالبتين أدت لجفاء في العلاقة لفترة قصيرة. ما هي الخطوة الصحيحة لبناء جسور التسامح؟
+        </div>
+
+        <button class="option-btn" onclick="selectOption(this, 3)">أ) انتظار الطرف الآخر ليأتي ويعتذر أولاً.</button>
+        <button class="option-btn" onclick="selectOption(this, 3)">ب) المبادرة بالسلام والصفح التام استشعاراً لقوله تعالى (فمن عفا وأصلح فأجره على الله).</button>
+        <button class="btn" style="margin-top: 10px;" onclick="checkAnswer(3)">تأكيد الإجابة وحل العقدة</button>
+    </div>
+
+    <!-- الشاشة النهائية -->
+    <div id="screen-final" class="screen">
+        <h1>تحدي فك العُقَد الكشفية</h1>
+        <div class="subtitle">تم بحمد الله فك جميع العقد بنجاح! </div>
+        <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
+
+        <div class="final-board">
+            <div class="final-title">تسامُحنا.. قوةُ وسلام</div>
+            <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">مع تحيات طليعة التسامح</div>
+            
+            <div class="signature-box">
+                <strong>القائدة الكشفية:</strong> أ/ فلوة الشهراني<br>
+                <strong>مديرة المدرسة:</strong> د/ فاطمه اسحاق
+            </div>
+        </div>
+        <button class="btn" onclick="location.reload()">إعادة التحدي</button>
+    </div>
+</div>
+
+<script>
+    let currentSelectedOption = null;
+
+    function nextScreen(screenNum) {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        if(screenNum === 1) document.getElementById('screen-q1').classList.add('active');
+    }
+
+    document.querySelectorAll('.option-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            // إزالة التحديد من باقي الأزرار في نفس الشاشة
+            this.parentElement.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+            this.classList.add('selected');
+            currentSelectedOption = this;
+        });
+    });
+
+    function checkAnswer(qNum) {
+        if(!currentSelectedOption) {
+            alert('الرجاء اختيار أحد الخيارات أولاً!');
+            return;
+        }
+        
+        currentSelectedOption = null; // إعادة تعيين
+
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        
+        if(qNum === 1) {
+            document.getElementById('screen-q2').classList.add('active');
+        } else if(qNum === 2) {
+            document.getElementById('screen-q3').classList.add('active');
+        } else if(qNum === 3) {
+            document.getElementById('screen-final').classList.add('active');
+        }
+    }
+</script>
+
+</body>
+</html>
